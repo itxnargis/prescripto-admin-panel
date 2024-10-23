@@ -13,24 +13,25 @@ const Login = () => {
       const {setAdminToken,backendUrl} = useContext(AdminContext)
 
       const onSubmitHandler = async (event) => {
-            event.preventDefault()
-
+            event.preventDefault();
+          
             try {
-                  if(state === 'Admin') {
-                        const {data} = await axios.post(backendUrl + '/api/admin/login', {email, password})
-                        if(data.success) {
-                              localStorage.setItem('adminToken', data.token)
-                              setAdminToken(data.token)
-                        }
-                        else {
-                              toast.error(data.message)    
-                        }
-                  }
+              if (state === 'Admin') {
+                const { data } = await axios.post(backendUrl + '/api/admin/login', { email, password });
+                if (data.success) {
+                  localStorage.setItem('atoken', data.token);  // Store token as 'atoken'
+                  setAdminToken(data.token);
+                  toast.success('Login successful');
+                } else {
+                  toast.error(data.message);
+                }
+              }
             } catch (error) {
-                  
+              toast.error('Login failed. Try again.');
+              console.log(error);
             }
-
-      }
+          };
+          
 
   return (
     <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center'>
