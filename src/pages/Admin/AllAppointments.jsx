@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { AdminContext } from '../../context/AdminContext'
 import { useEffect } from 'react'
 import { AppContext } from '../../context/AppContext'
-import { assets } from '../../../../frontend/src/assets/assets'
+import { assets } from '../../assets/assets'
 
 const AllAppointments = () => {
 
@@ -45,7 +45,7 @@ const AllAppointments = () => {
             {
               item.cancelled
                 ? <p className='text-red-400 text-xs font-medium'>Cancelled</p>
-                : <img onClick={() => cancelAppointment(item._id)} className='w-10 cursor-pointer' src={assets.cross_icon} alt="" />
+                : <img onClick={() => cancelAppointment(item._id)} className='w-10 cursor-pointer' src={assets.cancel_icon} alt="" />
             }
           </div>
         ))}
