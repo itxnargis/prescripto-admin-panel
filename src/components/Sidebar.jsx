@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { AdminContext } from '../context/AdminContext'
+import { AdminContext } from '../context/AdminContext.jsx'
 import { assets } from '../assets/assets'
 import { NavLink } from 'react-router-dom'
-import { DoctorContext } from '../context/DoctorContext'
+import { DoctorContext } from '../context/DoctorContext.jsx'
 
 const Sidebar = () => {
 
